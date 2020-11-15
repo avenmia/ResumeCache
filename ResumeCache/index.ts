@@ -1,5 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
-import { BlobServiceClient, StorageSharedKeyCredential } from "@azure/storage-blob";
+import { BlobServiceClient, StorageSharedKeyCredential, BlobDownloadResponseParsed } from "@azure/storage-blob";
+import * as fs from "fs";
 
 import * as dotenv from "dotenv";
 dotenv.config();
@@ -15,16 +16,16 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         `https://${account}.blob.core.windows.net`,
         sharedKeyCredential
       );
+
+    const containerClient = blobServiceClient.getContainerClient("mikesresume");
+    const blockBlobClient = containerClient.getBlockBlobClient("resumeData.json");
+    const resumePDFClient = containerClient.getBlockBlobClient("resume.pdf");
+    const pdfResult = await resumePDFClient.downloadToFile("./cache/resume.pdf");
+    const dataResult = await blockBlobClient.downloadToFile("./cache/resumeData.json");
     
-      let i = 1;
-      for await (const container of blobServiceClient.listContainers()) {
-        console.log(`Container ${i++}: ${container.name}`);
-      }
-    
-    const responseMessage = "Hello";
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: responseMessage
+        body: JSON.stringify("Hello")
     };
 
 };
