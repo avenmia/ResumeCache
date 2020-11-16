@@ -16,16 +16,40 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         `https://${account}.blob.core.windows.net`,
         sharedKeyCredential
       );
-
+    
+    const RESUME_DATA_PATH = "./ResumeCache/cache/resumeData.json";
+    const RESUME_PDF_PATH = "./ResumeCache/cache/resume.pdf";
     const containerClient = blobServiceClient.getContainerClient("mikesresume");
     const blockBlobClient = containerClient.getBlockBlobClient("resumeData.json");
     const resumePDFClient = containerClient.getBlockBlobClient("resume.pdf");
-    const pdfResult = await resumePDFClient.downloadToFile("./cache/resume.pdf");
-    const dataResult = await blockBlobClient.downloadToFile("./cache/resumeData.json");
-    
+    await resumePDFClient.downloadToFile(RESUME_PDF_PATH);
+    await blockBlobClient.downloadToFile(RESUME_DATA_PATH);
+
+    try
+    {
+        if(fs.existsSync(RESUME_DATA_PATH))
+        {
+            const resumeData = fs.readFileSync(RESUME_DATA_PATH);
+            context.res = {
+                status: 200,
+                body:JSON.stringify(JSON.parse(resumeData.toString()))
+            }
+            return;
+
+        }
+    }
+    catch(e)
+    {
+        context.res = {
+            status: 500,
+            body: JSON.stringify(e)
+        }
+    }
+
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: JSON.stringify("Hello")
+        status: 404,
+        body: JSON.stringify("Files not found")
     };
 
 };

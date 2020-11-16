@@ -1,0 +1,106 @@
+{
+  "Header": {
+    "Name": "Michael Avendano",
+    "Job Title": "Software Engineer",
+    "Contact": [
+      "tempemail@email.com",
+      "linkedin.com/in/michael-avendano",
+      "github.com/avenmia"
+    ]
+  },
+  "Content": {
+    "Skills": {
+      "Languages": [
+        "C#",
+        "TypeScript",
+        "JavaScript",
+        "Python"
+      ],
+      "Technologies": [
+        "Vue.js",
+        "React.js",
+        "Node.js",
+        "ASP.NET Core",
+        "CosmosDB",
+        "MSSQL Server",
+        "Docker"
+      ],
+      "Coding Styles": [
+        "Coding by Intention",
+        "Test Driven Development",
+        "Object Oriented Programming"
+      ],
+      "Version Control": [
+        "Subversion",
+        "Git"
+      ],
+      "Soft Skills": [
+        "Strong Work Ethic",
+        "Self-Motivated",
+        "Communication",
+        "Collaboration"
+      ]
+    },
+    "Work Experience": [
+      {
+        "Title": "Software Engineer",
+        "Employer": "Pangaea Information Technology",
+        "Start Date": "01-2019",
+        "End Date": "Present",
+        "Description": [
+          "Created RESTful APIs in ASP.NET Core, ASP.NET, and Node.js with Azure Functions",
+          "Worked as a front-end developer with TypeScript & React.js",
+          "Worked as a back end developer using C# with ASP.NET Core and SQL Server.",
+          "Used Test Driven Development to implement features.",
+          "Wrote robust test suites and maintained code coverage"
+        ]
+      },
+      {
+        "Title": "Research Assistant",
+        "Employer": "Electronic Visualization Laboratory at University of Illinois at Chicago",
+        "Start Date": "06-2018",
+        "End Date": "12-2019",
+        "Description": [
+          "Gained experience using Node.js and Express.js to handle data requests primarily utilizing WebSockets.",
+          "Utilized Mongoose to interface with MongoDB to create schemas and store live data efficiently.",
+          "Used Vue.js to create intuitive front-end interfaces to interact with remote devices.",
+          "Worked with various APIs for devices such as microphones and Z-Wave devices."
+        ]
+      },
+      {
+        "Title": "Teaching Assistant",
+        "Employer": "University of Illinois at Chicago",
+        "Start Date": "08-2017",
+        "End Date": "12-2018",
+        "Description": [
+          "Explained concepts such as graphs, maps, trees, sorting algorithms, run-time analysis to students.",
+          "Analyzed other students’ code to help debug and lead them to the appropriate solution.",
+          "Maintained consistent office hours to ensure that students understood the concepts being taught."
+        ]
+      }
+    ],
+    "Education": [
+      {
+        "School": "University of Illinois at Chicago",
+        "Degree": "Bachelor of Science",
+        "Major": "Computer Science",
+        "Start Date": "01-2017",
+        "End Date": "12-2018",
+        "Major GPA": "3.5",
+        "Overall GPA": "3.4"
+      },
+      {
+        "School": "University of Illinois at Chicago",
+        "Degree": "Bachelor of Science",
+        "Major": "Physics",
+        "Start Date": "08-2012",
+        "End Date": "05-2015"
+      }
+    ],
+    "Professional Associations, Activities, Achievements": [
+      "Association for Computer Machinery",
+      "2nd Place Team in UIC Google Games",
+      "1st Place in UIC 100 Level Hackathon"
+    ]
+  }
+}
